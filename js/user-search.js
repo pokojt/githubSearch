@@ -23,7 +23,7 @@ exports.UserSearch.prototype.getSummary = function() {
 
   }).fail(function(error){
     console.log(error.responseJSON.message);
-    $(".results").text("<h3 class='nope'>No Results. That username must not exist!</h3>")
+    $(".results").append("<h3 class='nope'>No Results. That username must not exist!</h3>")
   });
 };
 
