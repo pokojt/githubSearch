@@ -12,8 +12,10 @@ exports.UserSearch.prototype.getSummary = function() {
     $(".results").append('<div class="searchItem">'+
                             '<div class="userHeader">' +
                               '<img class="userPhoto" src="'+response.avatar_url+'">'+
-                              '<h4>'+response.name+'</h4>'+
-                              '<a target="_blank" href="https://github.com/'+response.login+'">'+response.login+'</a>'+
+                              '<div class="userText">'+
+                                '<h2>'+response.name+'</h2>'+
+                                '<a target="_blank" href="https://github.com/'+response.login+'">'+response.login+'</a>'+
+                              '</div>' +
                             '</div>' +
                             '<div class="repos"></div>' +
                           '</div>');
@@ -24,7 +26,7 @@ exports.UserSearch.prototype.getSummary = function() {
 };
 
 exports.UserSearch.prototype.getRepos = function() {
-  $.get('https://api.github.com/users/'+this.username+'/repos?access_token=' + apiKey).then(function(response){
+  $.get('https://api.github.com/users/'+this.username+'/repos?access_token=' + apiKey + '&per_page=1000').then(function(response){
     console.log(response);
 
     for(var i=0; i < response.length; i++) {
@@ -35,7 +37,7 @@ exports.UserSearch.prototype.getRepos = function() {
       console.log(projectName, projectDescription);
 
       $(".repos").append('<div class="repoItem">' +
-                            '<h5>'+projectName+'</h5>' +
+                            '<a target="_blank" href="https://github.com/'+response[0].owner.login+'/'+projectName+'"><h5>'+projectName+'</h5></a>' +
                             '<p>Description: '+projectDescription+'</p>' +
                           '</div>');
     };
