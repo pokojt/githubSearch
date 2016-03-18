@@ -1,5 +1,6 @@
 .results {
   width: 100%;
+  transition: all 2s ease-in;
   @include flexbox(flex, column, center, center);
   .searchItem {
     @include flexbox(flex, column, center, center);
