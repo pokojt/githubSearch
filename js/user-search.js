@@ -7,7 +7,7 @@ exports.UserSearch = function(username, repos, descriptions) {
 };
 
 exports.UserSearch.prototype.getRepos = function() {
-  $.get('https://api.github.com/users/'+inputtedUsername+'?access_token=' + apiKey).then(function(response){
+  $.get('https://api.github.com/users/'+this.username+'?access_token=' + apiKey).then(function(response){
   console.log(response);
   }).fail(function(error){
     console.log(error.responseJSON.message);
