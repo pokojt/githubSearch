@@ -28,16 +28,17 @@
       @include flexbox(flex, row, center, center, wrap);
       width: 100%;
       .repoItem {
+        @include flexbox(flex, column, center, center)
         padding: 1%;
         margin: 1%;
         text-align: center;
-        height: 25vh;
+        height: 15vh;
         width: 20%;
         overflow: scroll;
+        border: 1px solid darkcyan;
         &::-webkit-scrollbar {
           display: none;
         }
-        border: 1px solid peachpuff;
       }
     }
   }

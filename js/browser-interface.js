@@ -4,10 +4,12 @@ var apiKey = require('./../.env').apiKey;
 
 
 $(document).ready(function() {
+  $("#clearSearch").hide();
   $(".userSearch").submit(function(event) {
     event.preventDefault();
 
     $(".header").addClass("searched");
+    $("#clearSearch").show();
 
     var inputtedUsername = $("input#username").val();
     console.log(inputtedUsername);
@@ -19,4 +21,11 @@ $(document).ready(function() {
 
     $("form.userSearch")[0].reset();
   });
+
+  $("button#clearSearch").click(function() {
+    $('.header').removeClass('searched');
+    $('.results').empty();
+    $("button#clearSearch").hide();
+  });
+
 });
