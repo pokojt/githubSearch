@@ -1,0 +1,32 @@
+.results {
+  width: 100%;
+  @include flexbox(flex, column, center, center);
+  border: 1px solid blue;
+  .searchItem {
+    @include flexbox(flex, column, center, center);
+    border: 3px solid green;
+    width: 100%;
+    .userHeader {
+      border: 2px solid red;
+      @include flexbox(flex, row, center, flex-start);
+      width: 100%;
+      .userPhoto {
+        width: 250px;
+        border-radius: 50%;
+      }
+    }
+    .repos {
+      @include flexbox(flex, row, center, center, wrap);
+      width: 100%;
+      border: 1px solid cyan;
+      .repoItem {
+        padding: 1%;
+        margin: 1%;
+        text-align: center;
+        height: 15vh;
+        width: 20%;
+        border: 1px solid peachpuff;
+      }
+    }
+  }
+}

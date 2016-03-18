@@ -14,7 +14,7 @@ $(document).ready(function() {
     var newUserSearch = new UserSearch(inputtedUsername);
 
     newUserSearch.getSummary();
-    // newUserSearch.getRepos();
+    newUserSearch.getRepos();
 
 
     $("form.userSearch")[0].reset();
