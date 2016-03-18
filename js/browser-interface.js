@@ -13,9 +13,10 @@ $(document).ready(function() {
     console.log(inputtedUsername);
     var newUserSearch = new UserSearch(inputtedUsername);
 
-    newUserSearch.getRepos();
+    newUserSearch.getSummary();
+    // newUserSearch.getRepos();
 
 
-
+    $("form.userSearch")[0].reset();
   });
 });
