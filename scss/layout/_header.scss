@@ -1,3 +1,15 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+.container {
+  @include flexbox(flex, column, center, center);
+  .header {
+    @include flexbox(flex, column, center, center);
+    height: 100vh;
+  }
+}
+
+.searched {
+  height: 30vh !important;
+}

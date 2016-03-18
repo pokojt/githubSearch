@@ -4,7 +4,7 @@
 
 ##Description
 
-For this project, we were instructed to create a website where the user can enter a GitHub username into a form and submit it to see names and descriptions of that person's public repositories. The website should meet the following objectives:
+For this project, we were instructed to create a website where the user can enter a GitHub username into a form and submit it to see names and descriptions of that person's public repositories. We used the GitHub API to access Github's data. The website should meet the following objectives:
 
 - Manage your build tool dependencies with npm
 - Manage your front-end dependencies with Bower
@@ -15,7 +15,7 @@ For this project, we were instructed to create a website where the user can ente
 
 ##Installation
 
-Install Arctic Wild locally by cloning this repository:
+Install GitHub Search locally by cloning this repository:
 
 https://github.com/pokojt/githubSearch.git
 

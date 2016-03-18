@@ -9,5 +9,10 @@
 
 var apiKey = require('./../.env').apiKey;
 
+$(document).ready(function() {
+  $(".userSearch").submit(function(event) {
+    event.preventDefault();
 
-/* Front-end User interface (jquery) code goes in this file */
+    $(".header").addClass("searched");
+  });
+});
