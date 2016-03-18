@@ -8,6 +8,7 @@
     @include flexbox(flex, column, center, center);
     height: 100vh;
     text-align: center;
+    transition: all 1s ease-in-out;
   }
 }
 
