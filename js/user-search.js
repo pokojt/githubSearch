@@ -16,6 +16,7 @@ exports.UserSearch.prototype.getSummary = function() {
                               '<div class="userText">'+
                                 '<h2>'+response.name+'</h2>'+
                                 '<a id="userLink" target="_blank" href="https://github.com/'+response.login+'">'+response.login+'</a>'+
+                                '<p class="followers">followers: '+response.followers+'</p>'+
                               '</div>' +
                             '</div>' +
                             '<div class="repos"></div>' +
@@ -28,7 +29,7 @@ exports.UserSearch.prototype.getSummary = function() {
 };
 
 exports.UserSearch.prototype.getRepos = function() {
-  $.get('https://api.github.com/users/'+this.username+'/repos?access_token=' + apiKey + '&per_page=1000').then(function(response){
+  $.get('https://api.github.com/users/'+this.username+'/repos?access_token=' + apiKey + '&per_page=1000&sort=update').then(function(response){
     console.log(response);
 
     for(var i=0; i < response.length; i++) {
