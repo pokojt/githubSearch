@@ -7,6 +7,7 @@
 //
 // });
 
+var UserSearch = require('../js/githubuser.js').UserSearch;
 var apiKey = require('./../.env').apiKey;
 
 $(document).ready(function() {
@@ -14,5 +15,11 @@ $(document).ready(function() {
     event.preventDefault();
 
     $(".header").addClass("searched");
+
+    var inputtedUsername = $("input#username").val();
+    console.log(inputtedUsername);
+
+
+
   });
 });
