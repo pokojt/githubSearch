@@ -8,13 +8,14 @@ exports.UserSearch = function(username, repos, descriptions) {
 
 exports.UserSearch.prototype.getSummary = function() {
   $.get('https://api.github.com/users/'+this.username+'?access_token=' + apiKey).then(function(response){
+    console.log(response);
 
     $(".results").append('<div class="searchItem">'+
                             '<div class="userHeader">' +
                               '<img class="userPhoto" src="'+response.avatar_url+'">'+
                               '<div class="userText">'+
                                 '<h2>'+response.name+'</h2>'+
-                                '<a target="_blank" href="https://github.com/'+response.login+'">'+response.login+'</a>'+
+                                '<a id="userLink" target="_blank" href="https://github.com/'+response.login+'">'+response.login+'</a>'+
                               '</div>' +
                             '</div>' +
                             '<div class="repos"></div>' +
@@ -22,6 +23,7 @@ exports.UserSearch.prototype.getSummary = function() {
 
   }).fail(function(error){
     console.log(error.responseJSON.message);
+    $(".results").text("<h3 class='nope'>No Results. That username must not exist!</h3>")
   });
 };
 
@@ -38,7 +40,7 @@ exports.UserSearch.prototype.getRepos = function() {
 
       $(".repos").append('<div class="repoItem">' +
                             '<a target="_blank" href="https://github.com/'+response[0].owner.login+'/'+projectName+'"><h5>'+projectName+'</h5></a>' +
-                            '<p>Description: '+projectDescription+'</p>' +
+                            '<p>'+projectDescription+'</p>' +
                           '</div>');
     };
   }).fail(function(error){

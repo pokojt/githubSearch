@@ -17,8 +17,66 @@ html, body {
 body::-webkit-scrollbar {
   display: none;
 }
+body {
+  background-color: lighten($backgroundColor, 10%);
+  color: white;
+}
+
+h1 {
+  font-family: 'alexBrush';
+  font-size: 80px;
+  margin-bottom: 1%;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 2%;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
 
 
 a {
+  font-weight: lighter;
+  letter-spacing: 1px;
   text-decoration: none;
+  color: $accentColor;
+  transition: all 500ms ease;
+  &:hover {
+    color: #9999ff;
+    transition: all 500ms ease;
+    text-decoration: none;
+    letter-spacing: 3px;
+  }
+}
+
+h5 {
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 16px;
+  &:hover {
+    color: #9999ff;
+    transition: all 500ms ease;
+    text-decoration: none;
+    letter-spacing: 3px;
+  }
+}
+
+input {
+  background: rgba(255,255,255,.2);
+  color: $accentColor;
+  border: none;
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 3px;
+  width: 200px;
+  &:focus {
+    outline: none;
+  }
+}
+
+#userLink {
+  font-size: 20px !important;
+  margin-left: 35%;
 }

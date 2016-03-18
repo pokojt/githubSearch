@@ -12,7 +12,6 @@ $(document).ready(function() {
     $("#clearSearch").show();
 
     var inputtedUsername = $("input#username").val();
-    console.log(inputtedUsername);
     var newUserSearch = new UserSearch(inputtedUsername);
 
     newUserSearch.getSummary();
